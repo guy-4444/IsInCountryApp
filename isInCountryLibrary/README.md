@@ -18,17 +18,25 @@ Offline, zero-dependency Android library for point-in-country and sea/ocean dete
 
 ## Setup
 
-In `settings.gradle.kts`:
+### JitPack
+
+Add the JitPack repository to your root `settings.gradle.kts`:
 
 ```kotlin
-include(":isInCountryLibrary")
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
 ```
 
-In your app's `build.gradle.kts`:
+Add the dependency in your app's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation(project(":isInCountryLibrary"))
+    implementation("com.github.guy-4444:IsInCountryApp:1.00.03")
 }
 ```
 
